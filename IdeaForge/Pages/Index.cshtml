@@ -1,0 +1,151 @@
+﻿
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "IdeaForge | Turn Ideas Into Inventions";
+}
+
+<div class="ideaforge-home">
+
+    <nav class="forge-nav">
+        <a href="/" class="forge-logo">
+            <span>✦</span> IdeaForge
+        </a>
+
+        <div class="nav-links">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </div>
+
+        <a href="#create" class="nav-button">Start Creating ↗</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">
+                ✦ YOUR IDEAS. YOUR INVENTIONS. YOUR FUTURE.
+            </div>
+
+            <h1>
+                Don't Just Imagine.<br />
+                <span>Make It Possible.</span>
+            </h1>
+
+            <p class="hero-description">
+                Turn your imagination into practical invention proposals.
+                Describe your idea and let IdeaForge help you plan,
+                design and develop it.
+            </p>
+
+            <a href="#create" class="primary-button">
+                Start Your Invention <span>→</span>
+            </a>
+
+            <div class="hero-note">
+                ✦ From a simple thought to a structured invention plan.
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="visual-orbit orbit-one"></div>
+            <div class="visual-orbit orbit-two"></div>
+
+            <div class="visual-center">
+                <span>✦</span>
+            </div>
+
+            <div class="floating-card card-top">
+                <span>✧</span> Imagine
+            </div>
+
+            <div class="floating-card card-bottom">
+                <span>⚙</span> Create
+            </div>
+        </div>
+    </section>
+
+    
+<section class="create-section" id="create">
+    <div class="section-heading">
+        <span class="section-tag">YOUR JOURNEY STARTS HERE</span>
+        <h2>What do you want to invent?</h2>
+        <p>Every great invention starts with an idea. Tell us yours.</p>
+    </div>
+
+    <form method="post" asp-page-handler="SubmitIdea" class="idea-box">
+        <textarea asp-for="Idea"
+                  placeholder="Describe your invention idea here..."
+                  required></textarea>
+
+        <div class="idea-box-footer">
+            <span>✦ Be creative. There are no limits to imagination.</span>
+           <button type="submit"
+        style="background: purple; color: white; padding: 15px 25px; border: none; cursor: pointer;">
+    TEST SUBMIT
+</button>
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.Message))
+        {
+            <p style="color: #a78bfa; margin-top: 15px;">
+                @Model.Message
+            </p>
+        }
+    </form>
+</section>
+
+    <section class="features-section" id="features">
+        <div class="section-heading">
+            <span class="section-tag">POWER YOUR IMAGINATION</span>
+            <h2>Everything your idea needs</h2>
+        </div>
+
+        <div class="feature-grid">
+            <article class="feature-card">
+                <span>✧</span>
+                <h3>Idea Analysis</h3>
+                <p>Understand the problem your invention aims to solve.</p>
+            </article>
+
+            <article class="feature-card">
+                <span>◇</span>
+                <h3>Design Concepts</h3>
+                <p>Explore proposed designs and visual concepts for your invention.</p>
+            </article>
+
+            <article class="feature-card">
+                <span>⚙</span>
+                <h3>Materials & Costs</h3>
+                <p>Discover possible materials and estimated construction costs.</p>
+            </article>
+
+            <article class="feature-card">
+                <span>⇢</span>
+                <h3>Building Guide</h3>
+                <p>Follow structured steps to develop your invention prototype.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+        <div class="section-heading">
+            <span class="section-tag">SIMPLE PROCESS</span>
+            <h2>How IdeaForge works</h2>
+        </div>
+
+        <div class="steps-grid">
+            <div><span>01</span><h3>Share your idea</h3><p>Explain what you want to invent.</p></div>
+            <div><span>02</span><h3>Explore the concept</h3><p>Get an AI-generated invention proposal.</p></div>
+            <div><span>03</span><h3>Plan development</h3><p>Review designs, materials and costs.</p></div>
+            <div><span>04</span><h3>Start building</h3><p>Use your guide to develop a prototype.</p></div>
+        </div>
+    </section>
+
+    <footer id="about">
+        <a href="/" class="forge-logo"><span>✦</span> IdeaForge</a>
+        <p>Turning imagination into possibilities.</p>
+        <small>© 2026 IdeaForge. All rights reserved.</small>
+    </footer>
+
+</div>
